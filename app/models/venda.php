@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../config/database.php';
 
 class Venda {
     // Registra uma nova venda e atualiza o estoque
-    public function registrarVenda(int $idProduto, int $quantidade) {
+    public function registrar(int $idProduto, int $quantidade) {
         $db = \Database::getInstance()->getConnection();
 
         try {
