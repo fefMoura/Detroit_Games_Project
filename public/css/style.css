@@ -1,13 +1,191 @@
 @charset "UTF-8";
 
-*{
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #f0f0f0;
+body {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#000000;
+  padding: 10px 20px;
+  color: #fff;
+  gap: 20px; /* espaçamento entre logo, barra e carrinho */
+}
+
+.logo img {
+  height: 45px;
+}
+
+/* Centraliza e define largura menor para a barra */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  max-width: 80%;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #333;
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.search-bar button i {
+  font-size: 18px;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.search-bar button i:hover {
+  color: #ff5c00;
+}
+
+.cart i {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #000000;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 40px;
+  padding: 10px 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ff5c00;
+}
+
+/* ===== CARROSSEL ===== */
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 5; /* mantém proporção perfeita */
+  overflow: hidden;
+  background-color: #000;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 4px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* ===== PLATAFORMAS ===== */
+.platforms {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.platform-card {
+  width: 200px;
+  height: 100px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.platform-card:hover {
+  transform: scale(1.05);
+}
+
+.nintendo {
+  background-color: #e60012;
+}
+
+.ps4 {
+  background-color: #003791;
+}
+
+.ps5 {
+  background-color: #000000;
+}
+
+.xbox {
+  background-color: #107c10;
 }

@@ -1,12 +1,65 @@
 <!DOCTYPE html>
-<html lang="tp-br">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Detroit Games</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detroit Games | Loja Online</title>
+  <!-- Caminho absoluto para o CSS -->
+  <link rel="stylesheet" href="/public/css/style.css" />
 </head>
 <body>
-    <h1>Wlcome to Detroit Games</h1>
-    <p>Explore our amazing games!</p>
+  <header class="header">
+    <div class="logo">
+      <!-- Caminho absoluto para imagem -->
+      <img src="/public/images/LogoSemFundo.png" alt="Detroit Games Logo" />
+    </div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar produtos, marcas e ofertas..." />
+      <button><i class="fa fa-search"></i></button>
+    </div>
+
+    <div class="cart">
+      <i class="fa fa-shopping-cart"></i>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Plataformas</a></li>
+      <li><a href="#">Acessórios</a></li>
+      <li><a href="#">Mais</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="carousel">
+      <div class="carousel-container">
+        <div class="slide active">
+          <img src="\public\images\GOW.jpg" alt="GOd of War Ragnarok" />
+        </div>
+        <div class="slide">
+          <img src="\public\images\EldenRing.avif" alt="Elden Ring" />
+        </div>
+        <div class="slide">
+          <img src="\public\images\DetroitBecomeHuman.jpg" alt="Detroit Become Human" />
+        </div>
+      </div>
+
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </section>
+
+    <section class="platforms">
+      <div class="platform-card nintendo">Nintendo</div>
+      <div class="platform-card ps4">PS4</div>
+      <div class="platform-card ps5">PS5</div>
+      <div class="platform-card xbox">Xbox</div>
+    </section>
+  </main>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Caminho absoluto para o JS -->
+  <script src="/public/js/main.js"></script>
 </body>
 </html>
