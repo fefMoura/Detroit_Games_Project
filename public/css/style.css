@@ -21,10 +21,12 @@ body {
   padding: 10px 20px;
   color: #fff;
   gap: 20px; /* espaçamento entre logo, barra e carrinho */
+  height: 60px;
 }
 
 .logo img {
-  height: 45px;
+  margin-top: 20px;
+  height: 100px;
 }
 
 /* Centraliza e define largura menor para a barra */
@@ -99,7 +101,8 @@ body {
 .carousel {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 5; /* mantém proporção perfeita */
+  height: 70vh; 
+  max-height: 700px; 
   overflow: hidden;
   background-color: #000;
 }
@@ -117,8 +120,8 @@ body {
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  object-position: center; 
+  object-fit: contain; 
+  background-color: #000; 
 }
 
 .prev,
