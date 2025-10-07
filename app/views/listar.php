@@ -56,7 +56,11 @@
     </main>
 
     <footer>
+<<<<<<< HEAD
         <p>&copy; 2025 - Sistema de Venda</p>
+=======
+        <p>&copy; 2025 - Sistema de Vendas MVC</p>
+>>>>>>> 1bc9986688daab944558d8a76277ca9b9894884a
     </footer>
 </body>
 </html>
