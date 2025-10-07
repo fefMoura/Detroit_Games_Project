@@ -12,8 +12,7 @@ class ProdutoController {
         
         $produtos = $produtoModel->listarTodos();
         
-       
-        require_once __DIR__ . '/../views/produtos/listar.php'; 
+        require_once __DIR__ . '/../views/listar.php';
     }
 
 }
