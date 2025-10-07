@@ -26,6 +26,7 @@ body {
 .logo img {
   margin-top: 20px;
   height: 100px;
+  cursor: pointer;
 }
 
 .search-bar {
