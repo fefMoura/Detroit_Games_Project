@@ -25,3 +25,4 @@ if (file_exists($controllerFile)) {
     echo "Erro: Controller não encontrado.";
 }
 ?>
+

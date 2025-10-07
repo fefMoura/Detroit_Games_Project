@@ -9,8 +9,7 @@ class ProdutoController {
         $produtoModel = new \App\Models\Produto();
         $produtos = $produtoModel->listarTodos();
         
-        // Carrega a view passando a lista de produtos
-        require_once __DIR__ . '/../views/produtos/listar.php';
+        require_once __DIR__ . '/../views/listar.php';
     }
 }
 ?>
