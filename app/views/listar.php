@@ -10,8 +10,8 @@
     <header>
         <h1>Loja Virtual</h1>
         <nav>
-            <a href="/index.php?controller=produto&action=listar">Produtos</a>
-            <a href="/index.php?controller=venda&action=historico">Histórico de Vendas</a>
+            <a href="/roteador.php?controller=produto&action=listar">Produtos</a>
+            <a href="/roteador.php?controller=venda&action=historico">Histórico de Vendas</a>
         </nav>
     </header>
 
@@ -56,11 +56,7 @@
     </main>
 
     <footer>
-<<<<<<< HEAD
         <p>&copy; 2025 - Sistema de Venda</p>
-=======
-        <p>&copy; 2025 - Sistema de Vendas MVC</p>
->>>>>>> 1bc9986688daab944558d8a76277ca9b9894884a
     </footer>
 </body>
 </html>

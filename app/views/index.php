@@ -25,13 +25,13 @@
     </div>
   </header>
 
-  <nav class="navbar">
+ <nav class="navbar">
     <ul>
-      <li><a href="/app/views/listar.php">Produtos</a></li>
-      <li><a href="#">Vendas</a></li>
-      <li><a href="#">Histórico de Vendas</a></li>
+        <li><a href="../../public/roteador.php?controller=produto&action=listar">Produtos</a></li>
+        <li><a href="../../public/roteador.php?controller=produto&action=listar">Vendas</a></li>
+        <li><a href="../../public/roteador.php?controller=venda&action=historico">Histórico de Vendas</a></li>
     </ul>
-  </nav>
+</nav>
 
   <main>
     <section class="carousel">
