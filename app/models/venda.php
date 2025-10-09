@@ -48,15 +48,24 @@ class Venda {
     }
     
     // Lista o histórico de vendas
-    public function historico() {
+   public function historico(): array {
         $db = \Database::getInstance()->getConnection();
-        // Usamos JOIN para buscar o nome do produto junto com os dados da venda
+        
+        // A consulta SQL usa JOIN para combinar informações das duas tabelas
         $query = $db->query("
-            SELECT v.id, p.nome, v.quantidade, v.valor_total, v.data_venda 
-            FROM vendas v
-            JOIN produtos p ON v.id_produto = p.id
-            ORDER BY v.data_venda DESC
+            SELECT 
+                p.nome, 
+                v.quantidade, 
+                v.valor_total, 
+                v.data_venda 
+            FROM 
+                vendas AS v
+            JOIN 
+                produtos AS p ON v.id_produto = p.id
+            ORDER BY 
+                v.data_venda DESC
         ");
+        
         return $query->fetchAll();
     }
 }
