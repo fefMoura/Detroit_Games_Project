@@ -38,7 +38,7 @@ class VendaController {
         $vendas = $vendaModel->historico();
         
         // Carrega a view passando o histórico
-        require_once __DIR__ . '/../views/vendas/historico.php';
+        require_once __DIR__ . '/../views/historico.php';
     }
 }
 ?>
