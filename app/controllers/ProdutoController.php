@@ -17,7 +17,7 @@ class ProdutoController {
 
     public function adicionar() {
         // carregar a view do formulário
-        require_once __DIR__ . '/../views/produtos/adicionar.php';
+        require_once __DIR__ . '/../views/adicionar.php';
     }
 
      public function salvar() {
