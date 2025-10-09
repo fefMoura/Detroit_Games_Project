@@ -1,68 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Novo Produto</title>
-    <link rel="stylesheet" href="../public/css/style.css">
-    <style>
-        /* Estilos simples para o formulário não ficar sem formatação */
-        body { font-family: sans-serif; background-color: #f0f2f5; }
-        .form-container { max-width: 600px; margin: 50px auto; padding: 30px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h2 { text-align: center; color: #333; margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
-        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
-        .form-button { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; }
-        .form-button:hover { background-color: #0056b3; }
-        .back-link { display: block; text-align: center; margin-top: 20px; color: #007bff; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detroit Games | Adicionar Produto</title>
+  <link rel="stylesheet" href="../public/css/adicionar.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="form-container">
-        <h2>Cadastrar Novo Produto</h2>
-        <form action="../public/roteador.php?controller=produto&action=salvar" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="nome">Nome do Produto:</label>
-                <input type="text" id="nome" name="nome" required>
-            </div>
-<div class="form-group">
-                <label for="desenvolvedora">Desenvolvedora:</label>
-                <input type="text" id="desenvolvedora" name="desenvolvedora" required>
-            </div>
-
-            <div class="form-group">
-                <label for="genero">Gênero:</label>
-                <input type="text" id="genero" name="genero" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="plataforma">Plataforma:</label>
-                <select id="plataforma" name="plataforma" required>
-                    <option value="" disabled selected>Selecione uma plataforma</option>
-                    <option value="PS5">PlayStation 5</option>
-                    <option value="PS4">PlayStation 4</option>
-                    <option value="Xbox">Xbox</option>
-                    <option value="Nintendo">Nintendo</option>
-                </select>
-            </div>
-
-
-            <div class="form-group">
-                <label for="valor">Valor (ex: 249.90):</label>
-                <input type="number" id="valor" name="valor" step="0.01" required>
-            </div>
-            <div class="form-group">
-                <label for="estoque">Quantidade em Estoque:</label>
-                <input type="number" id="estoque" name="estoque" required>
-            </div>
-          <div class="form-group">
-                <label for="imagem">Imagem do Produto:</label>
-                <input type="file" id="imagem" name="imagem" accept="image/jpeg, image/png, image/webp" required>
-            </div>
-            <button type="submit" class="form-button">Salvar Produto</button>
-        </form>
-        <a href="../public/roteador.php?controller=produto&action=listar" class="back-link">Voltar para a lista de produtos</a>
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="logo">
+      <img src="../public/images/LogoSemFundo.png" alt="Logótipo da Detroit Games" onclick="window.location.href='../app/views/index.php'" style="cursor: pointer;" />
     </div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar produtos" />
+      <button><i class="fa fa-search"></i></button>
+    </div>
+
+    <div class="cart">
+      <i class="fa fa-shopping-cart"></i>
+    </div>
+  </header>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="../public/roteador.php?controller=produto&action=listar">Produtos</a></li>
+      <li><a href="../public/roteador.php?controller=produto&action=listar">Vendas</a></li>
+      <li><a href="../public/roteador.php?controller=venda&action=historico">Histórico de Vendas</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+    <!-- ===== BACKGROUND CAROUSEL ===== -->
+    <div class="carousel">
+      <div class="carousel-container">
+        <div class="slide active">
+          <img src="../public/images/carousel/GOW.jpg" alt="God of War Ragnarok" />
+        </div>
+        <div class="slide">
+          <img src="../public/images/carousel/EldenRing.avif" alt="Elden Ring" />
+        </div>
+        <div class="slide">
+          <img src="../public/images/carousel/DetroitBecomeHuman.jpg" alt="Detroit Become Human" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FORM CONTAINER ===== -->
+    <div class="form-container">
+      <h2><i class="fa fa-plus-circle"></i> Cadastrar Novo Produto</h2>
+
+      <form action="../public/roteador.php?controller=produto&action=salvar" method="POST" enctype="multipart/form-data">
+        
+        <div class="form-group">
+          <label for="nome"><i class="fa fa-gamepad"></i> Nome do Produto</label>
+          <input type="text" id="nome" name="nome" placeholder="Ex: God of War Ragnarok" required>
+        </div>
+
+        <div class="form-group">
+          <label for="desenvolvedora"><i class="fa fa-building"></i> Desenvolvedora</label>
+          <input type="text" id="desenvolvedora" name="desenvolvedora" placeholder="Ex: Santa Monica Studio" required>
+        </div>
+
+        <div class="form-group">
+          <label for="genero"><i class="fa fa-tags"></i> Gênero</label>
+          <input type="text" id="genero" name="genero" placeholder="Ex: Ação, Aventura" required>
+        </div>
+
+        <div class="form-group">
+          <label for="plataforma"><i class="fa fa-gamepad"></i> Plataforma</label>
+          <select id="plataforma" name="plataforma" required>
+            <option value="" disabled selected>Selecione uma plataforma</option>
+            <option value="PS5">PlayStation 5</option>
+            <option value="PS4">PlayStation 4</option>
+            <option value="Xbox">Xbox</option>
+            <option value="Nintendo">Nintendo</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="valor"><i class="fa fa-dollar-sign"></i> Valor</label>
+            <input type="number" id="valor" name="valor" step="0.01" placeholder="Ex: 249.90" required>
+          </div>
+
+          <div class="form-group half">
+            <label for="estoque"><i class="fa fa-boxes"></i> Estoque</label>
+            <input type="number" id="estoque" name="estoque" placeholder="Ex: 10" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="imagem"><i class="fa fa-image"></i> Imagem do Produto</label>
+          <input type="file" id="imagem" name="imagem" accept="image/jpeg, image/png, image/webp" required>
+          <div id="preview"></div>
+        </div>
+
+        <button type="submit" class="form-button">
+          <i class="fa fa-save"></i> Salvar Produto
+        </button>
+      </form>
+
+      <a href="../public/roteador.php?controller=produto&action=listar" class="back-link">
+        <i class="fa fa-arrow-left"></i> Voltar para a lista de produtos
+      </a>
+    </div>
+  </main>
+
+  <!-- ===== JS DO CARROSSEL ===== -->
+  <script>
+    let index = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.remove('active');
+        if (idx === i) slide.classList.add('active');
+      });
+      document.querySelector('.carousel-container').style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    setInterval(() => {
+      index = (index + 1) % totalSlides;
+      showSlide(index);
+    }, 5000);
+
+    const inputFile = document.querySelector("#imagem");
+    const preview = document.querySelector("#preview");
+
+    inputFile.addEventListener("change", () => {
+      const file = inputFile.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          preview.innerHTML = `<img src="${e.target.result}" alt="Prévia da imagem">`;
+        };
+        reader.readAsDataURL(file);
+      } else {
+        preview.innerHTML = "";
+      }
+    });
+  </script>
 </body>
 </html>
