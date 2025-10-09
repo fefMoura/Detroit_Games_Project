@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Novo Produto</title>
-    <link rel="stylesheet" href="/Detroit_Games_Project/public/css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
     <style>
         /* Estilos simples para o formulário não ficar sem formatação */
         body { font-family: sans-serif; background-color: #f0f2f5; }
@@ -21,11 +21,33 @@
 <body>
     <div class="form-container">
         <h2>Cadastrar Novo Produto</h2>
-        <form action="/Detroit_Games_Project/public/roteador.php?controller=produto&action=salvar" method="POST">
+        <form action="../public/roteador.php?controller=produto&action=salvar" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nome">Nome do Produto:</label>
                 <input type="text" id="nome" name="nome" required>
             </div>
+<div class="form-group">
+                <label for="desenvolvedora">Desenvolvedora:</label>
+                <input type="text" id="desenvolvedora" name="desenvolvedora" required>
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Gênero:</label>
+                <input type="text" id="genero" name="genero" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="plataforma">Plataforma:</label>
+                <select id="plataforma" name="plataforma" required>
+                    <option value="" disabled selected>Selecione uma plataforma</option>
+                    <option value="PS5">PlayStation 5</option>
+                    <option value="PS4">PlayStation 4</option>
+                    <option value="Xbox">Xbox</option>
+                    <option value="Nintendo">Nintendo</option>
+                </select>
+            </div>
+
+
             <div class="form-group">
                 <label for="valor">Valor (ex: 249.90):</label>
                 <input type="number" id="valor" name="valor" step="0.01" required>
@@ -34,13 +56,13 @@
                 <label for="estoque">Quantidade em Estoque:</label>
                 <input type="number" id="estoque" name="estoque" required>
             </div>
-            <div class="form-group">
-                <label for="imagem">Caminho da Imagem:</label>
-                <input type="text" id="imagem" name="imagem" placeholder="/public/images/nome-do-jogo.jpg" required>
+          <div class="form-group">
+                <label for="imagem">Imagem do Produto:</label>
+                <input type="file" id="imagem" name="imagem" accept="image/jpeg, image/png, image/webp" required>
             </div>
             <button type="submit" class="form-button">Salvar Produto</button>
         </form>
-        <a href="/Detroit_Games_Project/public/roteador.php?controller=produto&action=listar" class="back-link">Voltar para a lista de produtos</a>
+        <a href="../public/roteador.php?controller=produto&action=listar" class="back-link">Voltar para a lista de produtos</a>
     </div>
 </body>
 </html>

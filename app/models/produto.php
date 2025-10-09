@@ -18,14 +18,14 @@ class Produto {
         $stmt->execute([$id]);
         return $stmt->fetch();
     }
-    public function criar(string $nome, float $valor, int $estoque, string $imagem) {
+    public function criar(string $nome, float $valor, int $estoque, string $imagem, string $desenvolvedora, string $genero, string $plataforma) {
         $db = \Database::getInstance()->getConnection();
         
         try {
+            $sql = "INSERT INTO produtos (nome, valor, estoque, imagem, desenvolvedora, genero, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $db->prepare($sql);
         
-            $stmt = $db->prepare("INSERT INTO produtos (nome, valor, estoque, imagem) VALUES (?, ?, ?, ?)");
-        
-            return $stmt->execute([$nome, $valor, $estoque, $imagem]);
+            return $stmt->execute([$nome, $valor, $estoque, $imagem, $desenvolvedora, $genero, $plataforma]);
         } catch (\PDOException $e) {
             error_log('Erro ao criar produto: ' . $e->getMessage());
             return false;
