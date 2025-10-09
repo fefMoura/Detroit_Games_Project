@@ -17,7 +17,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="../public/images/LogoSemFundo.png" alt="Detroit Games Logo" onclick="window.location.href='/Detroit_Games_Project/public/index.php'" style="cursor: pointer;" />
+            <img src="../public/images/LogoSemFundo.png" alt="Detroit Games Logo" onclick="window.location.href='../app/views/index.php'" style="cursor: pointer;" />
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Buscar produtos" />
@@ -43,7 +43,7 @@
         if (isset($_GET['admin']) && $_GET['admin'] === 'true'):
         ?>
             <div class="admin-link-container">
-                <a href="/Detroit_Games_Project/public/roteador.php?controller=produto&action=adicionar" class="admin-link">
+                <a href="../public/roteador.php?controller=produto&action=adicionar" class="admin-link">
                     + Adicionar Novo Produto
                 </a>
             </div>

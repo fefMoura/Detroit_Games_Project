@@ -39,7 +39,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="../public/images/LogoSemFundo.png" alt="Logótipo da Detroit Games" onclick="window.location.href='../public/index.php'" style="cursor: pointer;" />
+            <img src="../public/images/LogoSemFundo.png" alt="Logótipo da Detroit Games" onclick="window.location.href='../app/views/index.php'" style="cursor: pointer;" />
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Buscar produtos" />
