@@ -53,8 +53,15 @@
     <nav class="navbar">
         <ul>
             <li><a href="../public/roteador.php?controller=produto&action=listar">Produtos</a></li>
-            <li><a href="../public/roteador.php?controller=produto&action=listar">Vendas</a></li>
             <li><a href="../public/roteador.php?controller=venda&action=historico">Histórico de Vendas</a></li>
+             <?php if (isset($_SESSION['usuario'])): ?>
+                <?php if ($_SESSION['role'] === 'admin'): ?>
+                    <li><a href="../public/roteador.php?controller=produto&action=adicionar">Adicionar Produto</a></li>
+                <?php endif; ?>
+                <li><a href="../public/roteador.php?controller=auth&action=logout">Logout</a></li>
+            <?php else: ?>
+                <li><a href="../public/roteador.php?controller=auth&action=login">Login</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 
