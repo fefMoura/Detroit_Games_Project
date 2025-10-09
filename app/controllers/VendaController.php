@@ -27,17 +27,15 @@ class VendaController {
             }
         }
         
-        // Redireciona de volta para a página de produtos
-        header('Location: /index.php?controller=produto&action=listar');
+        header('Location: ../public/roteador.php?controller=produto&action=listar');
         exit;
     }
 
-    // Método para buscar e exibir o histórico de vendas
+    // buscar e exibir o histórico de vendas
     public function historico() {
         $vendaModel = new \App\Models\Venda();
         $vendas = $vendaModel->historico();
         
-        // Carrega a view passando o histórico
         require_once __DIR__ . '/../views/historico.php';
     }
 }
