@@ -53,14 +53,23 @@
     <nav class="navbar">
         <ul>
             <li><a href="../public/roteador.php?controller=produto&action=listar">Produtos</a></li>
-            <li><a href="../public/roteador.php?controller=venda&action=historico">Histórico de Vendas</a></li>
-             <?php if (isset($_SESSION['usuario'])): ?>
-                <?php if ($_SESSION['role'] === 'admin'): ?>
-                    <li><a href="../public/roteador.php?controller=produto&action=adicionar">Adicionar Produto</a></li>
-                <?php endif; ?>
+            
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                <!-- Histórico de Vendas e Adicionar Produto só para admins -->
+                <li><a href="../public/roteador.php?controller=venda&action=historico">Histórico de Vendas</a></li>
+                <li><a href="../public/roteador.php?controller=produto&action=adicionar" style="color: #28a745; font-weight: bold;">Adicionar Produto</a></li>
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['usuario'])): ?>
+                <li>
+                    <span style="color: white; padding: 0 15px;">
+                      <strong> Olá, <?php echo htmlspecialchars($_SESSION['usuario']); ?></strong>
+                    </span>
+                  </li>
                 <li><a href="../public/roteador.php?controller=auth&action=logout">Logout</a></li>
             <?php else: ?>
-                <li><a href="../public/roteador.php?controller=auth&action=login">Login</a></li>
+                <!-- Login para visitantes -->
+                <li style="margin-left: auto;"><a href="../public/roteador.php?controller=auth&action=login">Login</a></li>
             <?php endif; ?>
         </ul>
     </nav>

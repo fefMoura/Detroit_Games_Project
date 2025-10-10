@@ -55,7 +55,11 @@ session_start();
             <?php endif; ?>
 
             <?php if (isset($_SESSION['usuario'])): ?>
-                <li style="margin-left: auto;"><span>Olá, <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</span></li>
+                <li>
+                    <span style="color: white; padding: 0 15px;">
+                      <strong> Olá, <?php echo htmlspecialchars($_SESSION['usuario']); ?></strong>
+                    </span>
+                  </li>
                 <li><a href="../public/roteador.php?controller=auth&action=logout">Logout</a></li>
             <?php else: ?>
                 <!-- Login para visitantes -->

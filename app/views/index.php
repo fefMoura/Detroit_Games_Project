@@ -35,7 +35,11 @@ session_start();
                     <li><a href="../../public/roteador.php?controller=venda&action=historico">Histórico de Vendas</a></li>
                     <li><a href="../../public/roteador.php?controller=produto&action=adicionar">Adicionar Produto</a></li>
                 <?php endif; ?>
-                <li><span style="color: white; padding: 0 15px;">Olá, <?php echo htmlspecialchars($_SESSION['usuario']); ?></span></li>
+                <li>
+                    <span style="color: white; padding: 0 15px;">
+                      <strong> Olá, <?php echo htmlspecialchars($_SESSION['usuario']); ?></strong>
+                    </span>
+                  </li>
                 <!-- Links para todos os usuários logados -->
                 <li><a href="../../public/roteador.php?controller=auth&action=logout">Logout</a></li>
 
