@@ -36,7 +36,7 @@ body {
   align-items: center;
   width: 700px;
   max-width: 80%;
-  background: #ca0000;
+  background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid #ccc;
@@ -263,4 +263,11 @@ body {
 .back-link:hover {
   color: #ff5c00;
   transform: scale(1.05);
+}
+
+input#jogoExiste {
+  padding: 0px;
+  margin: 0px;
+  width: 20px;
+  height: 20px;
 }

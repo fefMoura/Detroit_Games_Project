@@ -7,8 +7,10 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Detroit Games</title>
+    <link rel="shortcut icon" href="../public/images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="/Detroit_Games_Project/public/css/login.css">
-</head>
+
+</head> 
 <body>
 
     <!-- Fundo com Carrossel -->

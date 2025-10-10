@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detroit Games | Adicionar Produto</title>
   <link rel="stylesheet" href="../public/css/adicionar.css" />
+    <link rel="shortcut icon" href="../public/images/logo.ico" type="image/x-icon">
+
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -52,12 +54,12 @@
       <form action="../public/roteador.php?controller=produto&action=salvar" method="POST" enctype="multipart/form-data">
   
   <!-- Checkbox para indicar se o jogo já existe -->
-  <div class="form-group">
-    <label>
-      <input type="checkbox" id="jogoExiste" name="jogoExiste">
-      Este jogo já existe
-    </label>
-  </div>
+   <div class="form-group" id="checkbox">
+    <label id="lbl">
+      <input type="checkbox" id="jogoExiste" name="jogoExiste" >
+      Este jogo já existe
+    </label>
+  </div>
 
   <div class="form-group">
     <label for="nome"><i class="fa fa-gamepad"></i> Nome do Produto</label>

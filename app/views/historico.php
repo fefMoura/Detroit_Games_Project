@@ -6,6 +6,8 @@
     <title>Histórico de Vendas - Detroit Games</title>
     <link rel="stylesheet" href="../public/css/ps5.css" />
         <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="shortcut icon" href="../public/images/logo.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <style>
         .table-container {
