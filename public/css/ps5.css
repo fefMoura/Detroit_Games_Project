@@ -34,7 +34,7 @@ body {
   align-items: center;
   width: 700px;
   max-width: 80%;
-  background: #ca0000;
+  background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid #ccc;
@@ -51,10 +51,10 @@ body {
 
 
 .search-bar input {
-  bleed: 1;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
+bleed: 1;
+padding: 10px 15px;
+border: none;
+outline: none;
 }
 
 .search-bar button {

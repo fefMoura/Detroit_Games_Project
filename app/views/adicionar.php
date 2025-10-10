@@ -50,96 +50,120 @@
       <h2><i class="fa fa-plus-circle"></i> Cadastrar Novo Produto</h2>
 
       <form action="../public/roteador.php?controller=produto&action=salvar" method="POST" enctype="multipart/form-data">
-        
-        <div class="form-group">
-          <label for="nome"><i class="fa fa-gamepad"></i> Nome do Produto</label>
-          <input type="text" id="nome" name="nome" placeholder="Ex: God of War Ragnarok" required>
-        </div>
+  
+  <!-- Checkbox para indicar se o jogo já existe -->
+  <div class="form-group">
+    <label>
+      <input type="checkbox" id="jogoExiste" name="jogoExiste">
+      Este jogo já existe
+    </label>
+  </div>
 
-        <div class="form-group">
-          <label for="desenvolvedora"><i class="fa fa-building"></i> Desenvolvedora</label>
-          <input type="text" id="desenvolvedora" name="desenvolvedora" placeholder="Ex: Santa Monica Studio" required>
-        </div>
+  <div class="form-group">
+    <label for="nome"><i class="fa fa-gamepad"></i> Nome do Produto</label>
+    <input type="text" id="nome" name="nome" placeholder="Ex: God of War Ragnarok" required>
+  </div>
 
-        <div class="form-group">
-          <label for="genero"><i class="fa fa-tags"></i> Gênero</label>
-          <input type="text" id="genero" name="genero" placeholder="Ex: Ação, Aventura" required>
-        </div>
+  <div class="form-group">
+    <label for="desenvolvedora"><i class="fa fa-building"></i> Desenvolvedora</label>
+    <input type="text" id="desenvolvedora" name="desenvolvedora" placeholder="Ex: Santa Monica Studio" required>
+  </div>
 
-        <div class="form-group">
-          <label for="plataforma"><i class="fa fa-gamepad"></i> Plataforma</label>
-          <select id="plataforma" name="plataforma" required>
-            <option value="" disabled selected>Selecione uma plataforma</option>
-            <option value="PS5">PlayStation 5</option>
-            <option value="PS4">PlayStation 4</option>
-            <option value="Xbox">Xbox</option>
-            <option value="Nintendo">Nintendo</option>
-          </select>
-        </div>
+  <div class="form-group">
+    <label for="genero"><i class="fa fa-tags"></i> Gênero</label>
+    <input type="text" id="genero" name="genero" placeholder="Ex: Ação, Aventura" required>
+  </div>
 
-        <div class="form-row">
-          <div class="form-group half">
-            <label for="valor"><i class="fa fa-dollar-sign"></i> Valor</label>
-            <input type="number" id="valor" name="valor" step="0.01" placeholder="Ex: 249.90" required>
-          </div>
+  <div class="form-group">
+    <label for="plataforma"><i class="fa fa-gamepad"></i> Plataforma</label>
+    <select id="plataforma" name="plataforma" required>
+      <option value="" disabled selected>Selecione uma plataforma</option>
+      <option value="PS5">PlayStation 5</option>
+      <option value="PS4">PlayStation 4</option>
+      <option value="Xbox">Xbox</option>
+      <option value="Nintendo">Nintendo</option>
+    </select>
+  </div>
 
-          <div class="form-group half">
-            <label for="estoque"><i class="fa fa-boxes"></i> Estoque</label>
-            <input type="number" id="estoque" name="estoque" placeholder="Ex: 10" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="imagem"><i class="fa fa-image"></i> Imagem do Produto</label>
-          <input type="file" id="imagem" name="imagem" accept="image/jpeg, image/png, image/webp" required>
-          <div id="preview"></div>
-        </div>
-
-        <button type="submit" class="form-button">
-          <i class="fa fa-save"></i> Salvar Produto
-        </button>
-      </form>
-
-      <a href="../public/roteador.php?controller=produto&action=listar" class="back-link">
-        <i class="fa fa-arrow-left"></i> Voltar para a lista de produtos
-      </a>
+  <div class="form-row">
+    <div class="form-group half">
+      <label for="valor"><i class="fa fa-dollar-sign"></i> Valor</label>
+      <input type="number" id="valor" name="valor" step="0.01" placeholder="Ex: 249.90" required>
     </div>
-  </main>
 
-  <!-- ===== JS DO CARROSSEL ===== -->
-  <script>
-    let index = 0;
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+    <div class="form-group half">
+      <label for="estoque"><i class="fa fa-boxes"></i> Estoque</label>
+      <input type="number" id="estoque" name="estoque" placeholder="Ex: 10" required>
+    </div>
+  </div>
 
-    function showSlide(i) {
-      slides.forEach((slide, idx) => {
-        slide.classList.remove('active');
-        if (idx === i) slide.classList.add('active');
-      });
-      document.querySelector('.carousel-container').style.transform = `translateX(-${i * 100}%)`;
-    }
+  <div class="form-group">
+    <label for="imagem"><i class="fa fa-image"></i> Imagem do Produto</label>
+    <input type="file" id="imagem" name="imagem" accept="image/jpeg, image/png, image/webp" required>
+    <div id="preview"></div>
+  </div>
 
-    setInterval(() => {
-      index = (index + 1) % totalSlides;
-      showSlide(index);
-    }, 5000);
+  <button type="submit" class="form-button">
+    <i class="fa fa-save"></i> Salvar Produto
+  </button>
+</form>
 
-    const inputFile = document.querySelector("#imagem");
-    const preview = document.querySelector("#preview");
+<a href="../public/roteador.php?controller=produto&action=listar" class="back-link">
+  <i class="fa fa-arrow-left"></i> Voltar para a lista de produtos
+</a>
 
-    inputFile.addEventListener("change", () => {
-      const file = inputFile.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          preview.innerHTML = `<img src="${e.target.result}" alt="Prévia da imagem">`;
-        };
-        reader.readAsDataURL(file);
-      } else {
-        preview.innerHTML = "";
-      }
+<!-- ===== JS DO CARROSSEL + CONTROLE DE FORM ===== -->
+<script>
+  // ===== CARROSSEL =====
+  let index = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.classList.remove('active');
+      if (idx === i) slide.classList.add('active');
     });
-  </script>
-</body>
-</html>
+    document.querySelector('.carousel-container').style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    showSlide(index);
+  }, 5000);
+
+  // ===== PRÉVIA DA IMAGEM =====
+  const inputFile = document.querySelector("#imagem");
+  const preview = document.querySelector("#preview");
+
+  inputFile.addEventListener("change", () => {
+    const file = inputFile.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        preview.innerHTML = `<img src="${e.target.result}" alt="Prévia da imagem">`;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      preview.innerHTML = "";
+    }
+  });
+
+  // ===== DESABILITAR CAMPOS SE JOGO EXISTE =====
+  const checkbox = document.getElementById('jogoExiste');
+  const camposExtras = [
+    document.getElementById('desenvolvedora'),
+    document.getElementById('genero'),
+    document.getElementById('plataforma'),
+    document.getElementById('valor'),
+    document.getElementById('imagem')
+  ];
+
+  checkbox.addEventListener('change', () => {
+    const desabilitar = checkbox.checked;
+    camposExtras.forEach(campo => {
+      campo.disabled = desabilitar;
+      if (desabilitar) campo.value = '';
+    });
+  });
+</script>

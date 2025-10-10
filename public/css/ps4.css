@@ -67,15 +67,15 @@ body {
 
 .search-bar button i {
   font-size: 18px;
-  color: #666;
+  color: #fffafa;
   transition: color 0.3s;
 }
 
 .search-bar button i:hover {
-  color: #ff5c00;
+  color: #5f5f5f;
 }
 
-.cart i {
+.cart i {   
   font-size: 24px;
   cursor: pointer;
 }
