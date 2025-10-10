@@ -35,10 +35,13 @@ session_start();
         <div class="logo">
             <img src="../public/images/LogoSemFundo.png" alt="Detroit Games Logo" onclick="window.location.href='../app/views/index.php'" style="cursor: pointer;" />
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar produtos" />
-            <button><i class="fa fa-search"></i></button>
-        </div>
+      <div class="search-bar">
+    <form action="../public/roteador.php" method="get">
+        <input type="hidden" name="controller" value="produto">
+        <input type="hidden" name="action" value="pesquisar">
+        <input type="text" name="q" placeholder="Buscar produtos" required />
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
         <div class="cart">
             <i class="fa fa-shopping-cart"></i>
         </div>

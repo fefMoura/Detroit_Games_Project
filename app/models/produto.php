@@ -18,13 +18,20 @@ class Produto {
         $stmt->execute([$plataforma]);
         return $stmt->fetchAll();
     }
-    // Busca um único produto pelo ID
-    public function pesquisarPorId($id) {
-        $db = \Database::getInstance()->getConnection();
-        $stmt = $db->prepare("SELECT * FROM produtos WHERE id = ?");
-        $stmt->execute([$id]);
-        return $stmt->fetch();
-    }
+    // Busca produtos por uma substring do nome
+public function pesquisarPorNome($nome) {
+    $db = \Database::getInstance()->getConnection();
+    
+    $termoDePesquisa = '%' . $nome . '%'; 
+    
+    // Prepara a query usando LIKE e um placeholder
+    $stmt = $db->prepare("SELECT * FROM produtos WHERE nome LIKE ?");
+    // Executa a query com o termo de pesquisa preparado
+    $stmt->execute([$termoDePesquisa]);
+    // Altera para fetchAll() para retornar múltiplos resultados, 
+    // já que a pesquisa por substring pode retornar mais de um produto.
+    return $stmt->fetchAll();
+}
     public function criar(string $nome, float $valor, int $estoque, string $imagem, string $desenvolvedora, string $genero, string $plataforma) {
         $db = \Database::getInstance()->getConnection();
         

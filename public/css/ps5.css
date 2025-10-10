@@ -30,22 +30,30 @@ body {
 }
 
 .search-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 700px;
-  max-width: 80%;
-  background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid #ccc;
+ display: flex;
+ align-items: center;
+ width: 700px;
+ max-width: 80%;
+ background: #ca0000;
+ border-radius: 20px;
+ overflow: hidden;
+ border: 1px solid #ccc;
+padding-right: 10px;
+}
+.search-bar form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  
+    justify-content: flex-end; 
 }
 
+
 .search-bar input {
-  flex: 1;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
+ flex: 1;
+ padding: 10px 15px;
+ border: none;
+ outline: none;
 }
 
 .search-bar button {

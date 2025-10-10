@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico de Vendas - Detroit Games</title>
     <link rel="stylesheet" href="../public/css/ps5.css" />
+        <link rel="stylesheet" href="../public/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <style>
         .table-container {
@@ -42,9 +43,12 @@
             <img src="../public/images/LogoSemFundo.png" alt="Logótipo da Detroit Games" onclick="window.location.href='../app/views/index.php'" style="cursor: pointer;" />
         </div>
         <div class="search-bar">
-            <input type="text" placeholder="Buscar produtos" />
-            <button><i class="fa fa-search"></i></button>
-        </div>
+    <form action="../public/roteador.php" method="get">
+        <input type="hidden" name="controller" value="produto">
+        <input type="hidden" name="action" value="pesquisar">
+        <input type="text" name="q" placeholder="Buscar produtos" required />
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
         <div class="cart">
             <i class="fa fa-shopping-cart"></i>
         </div>

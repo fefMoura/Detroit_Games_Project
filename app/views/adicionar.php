@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detroit Games | Adicionar Produto</title>
   <link rel="stylesheet" href="../public/css/adicionar.css" />
+
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
@@ -15,14 +16,7 @@
       <img src="../public/images/LogoSemFundo.png" alt="Logótipo da Detroit Games" onclick="window.location.href='../app/views/index.php'" style="cursor: pointer;" />
     </div>
 
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar produtos" />
-      <button><i class="fa fa-search"></i></button>
-    </div>
-
-    <div class="cart">
-      <i class="fa fa-shopping-cart"></i>
-    </div>
+   
   </header>
 
   <!-- ===== NAVBAR ===== -->

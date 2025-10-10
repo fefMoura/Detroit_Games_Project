@@ -84,6 +84,22 @@ class ProdutoController {
 
      }
 
+      public function pesquisar() {
+        $produtoModel = new \App\Models\Produto();
+
+        // Captura o termo de busca
+        $termo = $_GET['q'] ?? '';
+
+        if (!empty($termo)) {
+            $produtos = $produtoModel->pesquisarPorNome($termo);
+            $titulo = "Resultados da busca por: " . htmlspecialchars($termo);
+        } else {
+            $produtos = $produtoModel->listarTodos();
+            $titulo = "Lista de Produtos";
+        }
+
+        require __DIR__ . '/../views/listar.php';
+    }
 
 }
 ?>
