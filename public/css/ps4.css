@@ -32,16 +32,17 @@ body {
 }
 
 .search-bar {
- display: flex;
- align-items: center;
- width: 700px;
- max-width: 80%;
- background: #ffffff;
- border-radius: 20px;
- overflow: hidden;
- border: 1px solid #ccc;
-padding-right: 10px;
+  display: flex;
+  align-items: center;
+  width: 700px;
+  max-width: 80%;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  padding-right: 10px;
 }
+
 .search-bar form {
     display: flex;
     width: 100%;
@@ -50,12 +51,11 @@ padding-right: 10px;
     justify-content: flex-end; 
 }
 
-
 .search-bar input {
- flex: 1;
- padding: 10px 15px;
- border: none;
- outline: none;
+  bleed: 1;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
 }
 
 .search-bar button {
