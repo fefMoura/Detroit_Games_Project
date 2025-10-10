@@ -7,10 +7,22 @@ class ProdutoController {
     /**
      * busca os produtos e decide qual view mostrar
      */
-    public function listar() {
+     public function listar() {
         $produtoModel = new \App\Models\Produto();
         
-        $produtos = $produtoModel->listarTodos();
+        // Verifica se o parâmetro 'plataforma' foi passado na URL
+        if (isset($_GET['plataforma']) && !empty($_GET['plataforma'])) {
+            $plataforma = $_GET['plataforma'];
+            // Busca apenas os produtos da plataforma especificada
+            $produtos = $produtoModel->listarPorPlataforma($plataforma);
+            // Define um título dinâmico para a página
+            $titulo = "Jogos " . htmlspecialchars($plataforma);
+        } else {
+            // Se nenhuma plataforma for especificada, busca todos os produtos
+            $produtos = $produtoModel->listarTodos();
+            // Define o título padrão
+            $titulo = "Todos os Produtos";
+        }
         
         require_once __DIR__ . '/../views/listar.php';
     }

@@ -63,10 +63,11 @@ session_start();
         </section>
 
         <section class="platforms">
-            <div class="platform-card nintendo" onclick="window.location.href='nintendo.html'">Nintendo</div>
-            <div class="platform-card ps4" onclick="window.location.href='ps4.html'">PS4</div>
-            <div class="platform-card ps5" onclick="window.location.href='ps5.html'">PS5</div>
-            <div class="platform-card xbox" onclick="window.location.href='xbox.html'">Xbox</div>
+            <!-- LINKS ATUALIZADOS PARA SEREM DINÂMICOS -->
+            <div class="platform-card nintendo" onclick="window.location.href='../../public/roteador.php?controller=produto&action=listar&plataforma=Nintendo'">Nintendo</div>
+            <div class="platform-card ps4" onclick="window.location.href='../../public/roteador.php?controller=produto&action=listar&plataforma=PS4'">PS4</div>
+            <div class="platform-card ps5" onclick="window.location.href='../../public/roteador.php?controller=produto&action=listar&plataforma=PS5'">PS5</div>
+            <div class="platform-card xbox" onclick="window.location.href='../../public/roteador.php?controller=produto&action=listar&plataforma=Xbox'">Xbox</div>
         </section>
     </main>
 

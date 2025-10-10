@@ -11,6 +11,13 @@ class Produto {
         return $query->fetchAll();
     }
     
+     public function listarPorPlataforma(string $plataforma) {
+        $db = \Database::getInstance()->getConnection();
+        // Usamos um prepared statement para segurança contra SQL Injection
+        $stmt = $db->prepare("SELECT * FROM produtos WHERE plataforma = ? ORDER BY nome");
+        $stmt->execute([$plataforma]);
+        return $stmt->fetchAll();
+    }
     // Busca um único produto pelo ID
     public function pesquisarPorId($id) {
         $db = \Database::getInstance()->getConnection();
